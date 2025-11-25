@@ -22,7 +22,9 @@ def generate_tone(duration, frequency, sample_rate):
     stream = p.open(format=pyaudio.paFloat32,
                     channels=1,
                     rate=sample_rate,
-                    output=True)
+                    output=True,                    
+                    output_device_index=1
+    )
 
     start_time = time.time()
     stream.write(output_bytes)
